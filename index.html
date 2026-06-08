@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Afroukh | Portfolio</title>
+    <meta name="description"
+        content="Professional portfolio of a software developer and author, bridging technology and personal growth.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.en {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body.ar {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .dark {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+        }
+
+        .light {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .bg-primary {
+            background-color: var(--bg-primary);
+        }
+
+        .bg-secondary {
+            background-color: var(--bg-secondary);
+        }
+
+        .bg-tertiary {
+            background-color: var(--bg-tertiary);
+        }
+
+        .text-primary {
+            color: var(--text-primary);
+        }
+
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+
+        .accent {
+            color: var(--accent);
+        }
+
+        .bg-accent {
+            background-color: var(--accent);
+        }
+
+        .hover-accent:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .skill-card,
+        .project-card,
+        .book-card,
+        .experience-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover,
+        .project-card:hover,
+        .book-card:hover,
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .progress-bar {
+            transition: width 1s ease-out;
+        }
+
+        .book-cover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.05) rotateY(5deg);
+        }
+
+        input,
+        textarea {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--bg-tertiary);
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .rtl-flip {
+            transform: scaleX(-1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="dark en">
+
+    <!-- Navigation -->
+    <nav class="bg-secondary fixed w-full top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="text-2xl font-bold gradient-text">
+                    <span id="nav-logo">Portfolio</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 rtl:space-x-reverse">
+                    <a href="#home" class="nav-link text-primary hover:accent" data-key="nav_home">Home</a>
+                    <a href="#about" class="nav-link text-primary hover:accent" data-key="nav_about">About</a>
+                    <a href="#experience" class="nav-link text-primary hover:accent"
+                        data-key="nav_experience">Experience</a>
+                    <a href="#skills" class="nav-link text-primary hover:accent" data-key="nav_skills">Skills</a>
+                    <a href="#projects" class="nav-link text-primary hover:accent" data-key="nav_projects">Projects</a>
+                    <a href="#book" class="nav-link text-primary hover:accent" data-key="nav_book">Book</a>
+                    <a href="#contact" class="nav-link text-primary hover:accent" data-key="nav_contact">Contact</a>
+                </div>
+
+                <!-- Theme & Language Toggles -->
+                <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-tertiary hover:bg-accent text-primary">
+                        <i class="fas fa-sun" id="theme-icon"></i>
+                    </button>
+
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle"
+                        class="px-4 py-2 rounded-lg bg-accent text-white font-semibold hover-accent">
+                        <span id="lang-text">AR</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-tertiary">
+                        <i class="fas fa-bars text-primary"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-secondary border-t border-gray-700/50">
+                <a href="#home" class="block py-2 text-primary hover:accent" data-key="nav_home">Home</a>
+                <a href="#about" class="block py-2 text-primary hover:accent" data-key="nav_about">About</a>
+                <a href="#experience" class="block py-2 text-primary hover:accent"
+                    data-key="nav_experience">Experience</a>
+                <a href="#skills" class="block py-2 text-primary hover:accent" data-key="nav_skills">Skills</a>
+                <a href="#projects" class="block py-2 text-primary hover:accent" data-key="nav_projects">Projects</a>
+                <a href="#book" class="block py-2 text-primary hover:accent" data-key="nav_book">Book</a>
+                <a href="#contact" class="block py-2 text-primary hover:accent" data-key="nav_contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 px-4">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-primary" data-key="hero_name">
+                Adam Afroukh
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-semibold mb-6 gradient-text" data-key="hero_title">
+                Software Developer & Programmer
+            </h2>
+            <p class="text-xl md:text-2xl text-secondary mb-12 max-w-2xl mx-auto" data-key="hero_tagline">
+                Crafting elegant solutions to complex problems, building meaningful digital experiences that make a
+                difference.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-8 py-3 bg-accent text-white rounded-lg font-semibold hover-accent">
+                    <span data-key="hero_btn_projects">View Projects</span>
+                </a>
+                <a href="#contact"
+                    class="px-8 py-3 bg-tertiary text-primary rounded-lg font-semibold hover:bg-accent hover:text-white">
+                    <span data-key="hero_btn_contact">Get In Touch</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-secondary">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-primary" data-key="about_heading">
+                About Me
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center">
+                    <div class="relative w-64 h-64 group">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-accent to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200">
+                        </div>
+
+                        <div
+                            class="relative w-64 h-64 bg-secondary rounded-full overflow-hidden border-4 border-accent shadow-2xl transform transition-transform duration-500 hover:scale-105">
+                            <img src="21004063.jpg" alt="Adam" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg text-secondary leading-relaxed" data-key="about_para1">
+                        I'm a passionate software developer dedicated to building innovative solutions that solve
+                        real-world problems. With a strong foundation in programming and a continuous drive for
+                        learning, I transform ideas into functional, elegant applications.
+                    </p>
+                    <p class="text-lg text-secondary leading-relaxed" data-key="about_para2">
+                        Beyond coding, I believe in personal growth and self-development. My journey as a developer is
+                        intertwined with my pursuit of meaningful impact—whether through technology or the written word.
+                        I'm committed to excellence, creativity, and making a positive difference.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-code accent text-xl"></i>
+                            <span class="text-secondary" data-key="about_tag1">Problem Solver</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-lightbulb accent text-xl"></i>
+                            <span class="text-secondary" data-key="about_tag2">Creative Thinker</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-heart accent text-xl"></i>
+                            <span class="text-secondary" data-key="about_tag3">Lifelong Learner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4 bg-secondary">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-primary" data-key="experience_heading">
+                Professional Experience
+            </h2>
+            <div class="space-y-8">
+                <!-- Experience Item 1 -->
+                <div class="experience-card bg-primary rounded-lg p-6 md:p-8 shadow-lg border-l-4 border-accent">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-primary mb-2" data-key="exp1_title">
+                                Senior Software Developer
+                            </h3>
+                            <h4 class="text-xl font-semibold accent mb-2" data-key="exp1_company">
+                                Tech Solutions Inc.
+                            </h4>
+                        </div>
+                        <div class="flex items-center gap-2 text-secondary">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-key="exp1_date">2022 - Present</span>
+                        </div>
+                    </div>
+                    <p class="text-secondary leading-relaxed mb-4" data-key="exp1_desc">
+                        Leading development of enterprise-level applications using modern web technologies. Architecting
+                        scalable solutions, mentoring junior developers, and implementing best practices for code
+                        quality and performance optimization.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">AWS</span>
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="experience-card bg-primary rounded-lg p-6 md:p-8 shadow-lg border-l-4 border-accent">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-primary mb-2" data-key="exp2_title">
+                                Full Stack Developer
+                            </h3>
+                            <h4 class="text-xl font-semibold accent mb-2" data-key="exp2_company">
+                                Digital Innovations Ltd.
+                            </h4>
+                        </div>
+                        <div class="flex items-center gap-2 text-secondary">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-key="exp2_date">2020 - 2022</span>
+                        </div>
+                    </div>
+                    <p class="text-secondary leading-relaxed mb-4" data-key="exp2_desc">
+                        Developed and maintained multiple client projects including e-commerce platforms and business
+                        management systems. Collaborated with cross-functional teams to deliver high-quality software
+                        solutions on time.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Django</span>
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="experience-card bg-primary rounded-lg p-6 md:p-8 shadow-lg border-l-4 border-accent">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-primary mb-2" data-key="exp3_title">
+                                Junior Developer
+                            </h3>
+                            <h4 class="text-xl font-semibold accent mb-2" data-key="exp3_company">
+                                StartUp Hub
+                            </h4>
+                        </div>
+                        <div class="flex items-center gap-2 text-secondary">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-key="exp3_date">2018 - 2020</span>
+                        </div>
+                    </div>
+                    <p class="text-secondary leading-relaxed mb-4" data-key="exp3_desc">
+                        Started my professional journey building responsive web applications and learning industry best
+                        practices. Participated in agile development processes and gained hands-on experience with
+                        modern development tools.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">HTML/CSS</span>
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Git</span>
+                        <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-primary" data-key="skills_heading">
+                Skills & Expertise
+            </h2>
+
+            <!-- Programming Languages -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-8 text-primary" data-key="skills_languages_heading">
+                    Programming Languages
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="skill-card bg-secondary p-6 rounded-lg">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="fab fa-js text-4xl text-yellow-500"></i>
+                            <h4 class="text-xl font-semibold text-primary">JavaScript</h4>
+                        </div>
+                        <div class="w-full bg-tertiary rounded-full h-2">
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="fab fa-python text-4xl text-blue-500"></i>
+                            <h4 class="text-xl font-semibold text-primary">Python</h4>
+                        </div>
+                        <div class="w-full bg-tertiary rounded-full h-2">
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="fab fa-java text-4xl text-red-500"></i>
+                            <h4 class="text-xl font-semibold text-primary">Java</h4>
+                        </div>
+                        <div class="w-full bg-tertiary rounded-full h-2">
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="fab fa-html5 text-4xl text-orange-500"></i>
+                            <h4 class="text-xl font-semibold text-primary">HTML/CSS</h4>
+                        </div>
+                        <div class="w-full bg-tertiary rounded-full h-2">
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="fas fa-database text-4xl accent"></i>
+                            <h4 class="text-xl font-semibold text-primary">SQL</h4>
+                        </div>
+                        <div class="w-full bg-tertiary rounded-full h-2">
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="fab fa-php text-4xl text-purple-500"></i>
+                            <h4 class="text-xl font-semibold text-primary">PHP</h4>
+                        </div>
+                        <div class="w-full bg-tertiary rounded-full h-2">
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frameworks & Tools -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-8 text-primary" data-key="skills_frameworks_heading">
+                    Frameworks & Tools
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="skill-card bg-secondary p-6 rounded-lg text-center">
+                        <i class="fab fa-react text-5xl text-cyan-400 mb-3"></i>
+                        <p class="text-primary font-semibold">React</p>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg text-center">
+                        <i class="fab fa-node text-5xl text-green-500 mb-3"></i>
+                        <p class="text-primary font-semibold">Node.js</p>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg text-center">
+                        <i class="fab fa-git-alt text-5xl text-orange-600 mb-3"></i>
+                        <p class="text-primary font-semibold">Git</p>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg text-center">
+                        <i class="fab fa-docker text-5xl text-blue-400 mb-3"></i>
+                        <p class="text-primary font-semibold">Docker</p>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg text-center">
+                        <i class="fab fa-aws text-5xl text-yellow-600 mb-3"></i>
+                        <p class="text-primary font-semibold">AWS</p>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg text-center">
+                        <i class="fas fa-database text-5xl accent mb-3"></i>
+                        <p class="text-primary font-semibold">MongoDB</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-secondary">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-primary" data-key="projects_heading">
+                Featured Projects
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-primary rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-48 bg-accent flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-primary" data-key="project1_title">
+                            E-Commerce Platform
+                        </h3>
+                        <p class="text-secondary mb-4" data-key="project1_desc">
+                            A full-stack e-commerce solution with payment integration, user authentication, and admin
+                            dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-accent hover:underline">
+                                <i class="fas fa-external-link-alt"></i> <span data-key="project_live">Live Demo</span>
+                            </a>
+                            <a href="#" class="text-accent hover:underline">
+                                <i class="fab fa-github"></i> <span data-key="project_code">Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-primary rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                        <i class="fas fa-brain text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-primary" data-key="project2_title">
+                            AI Task Manager
+                        </h3>
+                        <p class="text-secondary mb-4" data-key="project2_desc">
+                            An intelligent task management system using machine learning to prioritize and organize
+                            tasks efficiently.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">TensorFlow</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Flask</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-accent hover:underline">
+                                <i class="fas fa-external-link-alt"></i> <span data-key="project_live">Live Demo</span>
+                            </a>
+                            <a href="#" class="text-accent hover:underline">
+                                <i class="fab fa-github"></i> <span data-key="project_code">Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-primary rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-primary" data-key="project3_title">
+                            Fitness Tracker App
+                        </h3>
+                        <p class="text-secondary mb-4" data-key="project3_desc">
+                            A mobile application for tracking workouts, nutrition, and health metrics with data
+                            visualization.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">React Native</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Firebase</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Redux</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-accent hover:underline">
+                                <i class="fas fa-external-link-alt"></i> <span data-key="project_live">Live Demo</span>
+                            </a>
+                            <a href="#" class="text-accent hover:underline">
+                                <i class="fab fa-github"></i> <span data-key="project_code">Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Section -->
+    <section id="book" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-primary" data-key="book_heading">
+                My Book
+            </h2>
+            <div class="book-card bg-secondary rounded-2xl p-8 md:p-12">
+                <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+
+                    <div class="w-full md:w-auto flex justify-center flex-shrink-0">
+                        <img src="./book.png" alt="You're Allowed to Begin Again"
+                            class="w-64 h-auto md:h-96 object-cover rounded-lg shadow-lg">
+                    </div>
+
+                    <div class="flex flex-col justify-between flex-1 w-full">
+
+                        <div class="flex flex-col space-y-4 text-center md:text-start">
+                            <h3 class="text-3xl md:text-4xl font-bold text-primary" data-key="book_title">
+                                You're Allowed to Begin Again
+                            </h3>
+                            <p class="text-lg text-secondary leading-relaxed" data-key="book_desc">
+                                This work serves as a gentle, reflective guide to sustainable personal growth and
+                                self-awareness, inviting readers to step away from the relentless pace of modern demands
+                                and the pressure of instant success. Through a curated collection of insightful essays
+                                rooted in real-life observations, it emphasizes the power of slowing down, embracing
+                                inner softness, and building small habits that lead to meaningful change. The content
+                                skillfully addresses overcoming digital noise, establishing healthy boundaries, and
+                                finding the courage to start over without rigid conditions. It is an ideal companion for
+                                anyone seeking to reclaim their peace of mind, heal, and navigate their personal journey
+                                with kindness and authenticity.
+                            </p>
+                        </div>
+
+                        <div class="flex justify-center md:justify-start gap-4 mt-6 md:mt-auto pt-4">
+                            <a href="./book.pdf" target="_blank"
+                                class="px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover inline-flex items-center gap-2">
+                                <i class="fas fa-book"></i>
+                                <span data-key="book_btn_read">Read More</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-secondary">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-primary" data-key="contact_heading">
+                Get In Touch
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <p class="text-lg text-secondary" data-key="contact_intro">
+                        Have a question, a project idea, or just want to say hi? Drop me a message below!
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-secondary" data-key="contact_email_label">Email</p>
+                                <span class="text-primary font-semibold">adamafroukh@outlook.com</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white">
+                                <i class="fab fa-github text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-secondary" data-key="contact_github_label">GitHub</p>
+                                <a href="https://github.com/adamafroukh" target="_blank"
+                                    class="text-primary font-semibold hover:text-accent">github.com/adamafroukh</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <form class="space-y-4" onsubmit="event.preventDefault();">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-primary"
+                                data-key="contact_form_name">Your Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-primary"
+                                data-key="contact_form_email">Your Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-primary"
+                                data-key="contact_form_message">Message</label>
+                            <textarea rows="5" class="w-full px-4 py-3 rounded-lg" required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover">
+                            <span data-key="contact_form_send">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 bg-primary border-t border-tertiary">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-secondary" data-key="footer_text">
+                © 2026 by Adam Afroukh.
+            </p>
+            <p class="text-xs text-gray-500 max-w-2xl mx-auto leading-relaxed" data-key="footer_note">
+                * Note: The professional career timeline is a conceptual placeholder designed for future graduation use.
+                All other elements, including the codebase, projects, technical skills, and book details, are entirely
+                authentic.
+            </p>
+            <div class="flex justify-center gap-6 mt-4">
+                <a href="https://github.com/adamafroukh" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-accent text-2xl"><i class="fab fa-github"></i></a>
+                <a href="mailto:adamafroukh@outlook.com" class="text-secondary hover:text-accent text-2xl"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Content translations
+        const content = {
+            en: {
+                nav_home: "Home",
+                nav_about: "About",
+                nav_experience: "Experience",
+                nav_skills: "Skills",
+                nav_projects: "Projects",
+                nav_book: "Book",
+                nav_contact: "Contact",
+                hero_name: "Adam Afroukh",
+                hero_title: "Software Developer & Programmer",
+                hero_tagline: "Crafting elegant solutions to complex problems, building meaningful digital experiences that make a difference.",
+                hero_btn_projects: "View Projects",
+                hero_btn_contact: "Get In Touch",
+                about_heading: "About Me",
+                about_para1: "I'm a passionate software developer dedicated to building innovative solutions that solve real-world problems. With a strong foundation in programming and a continuous drive for learning, I transform ideas into functional, elegant applications.",
+                about_para2: "Beyond coding, I believe in personal growth and self-development. My journey as a developer is intertwined with my pursuit of meaningful impact—whether through technology or the written word. I'm committed to excellence, creativity, and making a positive difference.",
+                about_tag1: "Problem Solver",
+                about_tag2: "Creative Thinker",
+                about_tag3: "Lifelong Learner",
+                experience_heading: "Professional Experience",
+                exp1_title: "Senior Software Developer",
+                exp1_company: "Tech Solutions Inc.",
+                exp1_date: "2022 - Present",
+                exp1_desc: "Leading development of enterprise-level applications using modern web technologies. Architecting scalable solutions, mentoring junior developers, and implementing best practices for code quality and performance optimization.",
+                exp2_title: "Full Stack Developer",
+                exp2_company: "Digital Innovations Ltd.",
+                exp2_date: "2020 - 2022",
+                exp2_desc: "Developed and maintained multiple client projects including e-commerce platforms and business management systems. Collaborated with cross-functional teams to deliver high-quality software solutions on time.",
+                exp3_title: "Junior Developer",
+                exp3_company: "StartUp Hub",
+                exp3_date: "2018 - 2020",
+                exp3_desc: "Started my professional journey building responsive web applications and learning industry best practices. Participated in agile development processes and gained hands-on experience with modern development tools.",
+                skills_heading: "Skills & Expertise",
+                skills_languages_heading: "Programming Languages",
+                skills_frameworks_heading: "Frameworks & Tools",
+                projects_heading: "Featured Projects",
+                project1_title: "E-Commerce Platform",
+                project1_desc: "A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.",
+                project2_title: "AI Task Manager",
+                project2_desc: "An intelligent task management system using machine learning to prioritize and organize tasks efficiently.",
+                project3_title: "Fitness Tracker App",
+                project3_desc: "A mobile application for tracking workouts, nutrition, and health metrics with data visualization.",
+                project_live: "Live Demo",
+                project_code: "Code",
+                book_heading: "My Book",
+                book_title: "You're Allowed to Begin Again",
+                book_desc: "This work serves as a gentle, reflective guide to sustainable personal growth and self-awareness, inviting readers to step away from the relentless pace of modern demands and the pressure of instant success. Through a curated collection of insightful essays rooted in real-life observations, it emphasizes the power of slowing down, embracing inner softness, and building small habits that lead to meaningful change. The content skillfully addresses overcoming digital noise, establishing healthy boundaries, and finding the courage to start over without rigid conditions. It is an ideal companion for anyone seeking to reclaim their peace of mind, heal, and navigate their personal journey with kindness and authenticity.  ",
+                book_btn_read: "Read More",
+                contact_heading: "Get In Touch",
+                contact_intro: "Have a question, a project idea, or just want to say hi? Drop me a message below!",
+                contact_email_label: "Email",
+                contact_github_label: "GitHub",
+                contact_form_name: "Your Name",
+                contact_form_email: "Your Email",
+                contact_form_message: "Message",
+                contact_form_send: "Send Message",
+                footer_text: "© 2026 by Adam Afroukh.",
+                footer_note: "* Note: The professional career timeline is a conceptual placeholder designed for future graduation use. All other elements, including the codebase, projects, technical skills, and book details, are entirely authentic."
+            },
+            ar: {
+                nav_home: "الرئيسية",
+                nav_about: "عني",
+                nav_experience: "مسيرتي",
+                nav_skills: "مهاراتي",
+                nav_projects: "مشاريعي",
+                nav_book: "كتابي",
+                nav_contact: "اتصل بي",
+                hero_name: "آدم أفروخ",
+                hero_title: "كاتب ومطور برمجيات محترف",
+                hero_tagline: "أصمم حلولاً أنيقة لمشاكل معقدة، وأبني تجارب رقمية مؤثرة تُحدث فرقاً حقيقياً.",
+                hero_btn_projects: "عرض مشاريعي",
+                hero_btn_contact: "تواصل معي",
+                about_heading: "عني",
+                about_para1: "أنا مطور برمجيات شغوف بابتكار حلول مبتكرة تحل مشاكل حقيقية. بفضل أساس قوي في البرمجة ودافع مستمر للتعلم، أحول الأفكار إلى تطبيقات عملية وأنيقة.",
+                about_para2: "وراء البرمجة، أؤمن بالنمو الشخصي والتطوير الذاتي. رحلتي كمطور متشابكة مع سعيي لإحداث تأثير ذي معنى—سواء من خلال التكنولوجيا أو الكلمة المكتوبة. أنا ملتزم بالتميز والإبداع وإحداث فرق إيجابي.",
+                about_tag1: "كاتب ومبرمج",
+                about_tag2: "مفكر إبداعي",
+                about_tag3: "متعلم مدى الحياة",
+                experience_heading: "مسيرتي المهنية",
+                exp1_title: "مطور برمجيات أول",
+                exp1_company: "شركة google",
+                exp1_date: "2034 - حتى الآن",
+                exp1_desc: "قيادة تطوير تطبيقات على مستوى المؤسسات باستخدام تقنيات الويب الحديثة. تصميم حلول قابلة للتوسع، إرشاد المطورين المبتدئين، وتطبيق أفضل الممارسات لجودة الكود وتحسين الأداء.",
+                exp2_title: "مطور برمجيات متكامل",
+                exp2_company: "شركة open ai",
+                exp2_date: "2028 - 2034",
+                exp2_desc: "تطوير وصيانة عدة مشاريع للعملاء بما في ذلك منصات التجارة الإلكترونية وأنظمة إدارة الأعمال. التعاون مع فرق متعددة التخصصات لتقديم حلول برمجية عالية الجودة في الوقت المحدد.",
+                exp3_title: "مطور مبتدئ",
+                exp3_company: "مركز الشركات الناشئة",
+                exp3_date: "2024 - 2027",
+                exp3_desc: "بدأت مسيرتي المهنية في بناء تطبيقات ويب متجاوبة وتعلم أفضل الممارسات في الصناعة. المشاركة في عمليات التطوير الرشيقة واكتساب خبرة عملية مع أدوات التطوير الحديثة.",
+                skills_heading: "مهاراتي البرمجية",
+                skills_languages_heading: "لغات البرمجة",
+                skills_frameworks_heading: "الأطر والأدوات",
+                projects_heading: "مشاريعي المميزة",
+                project1_title: "منصة التجارة الإلكترونية",
+                project1_desc: "حل متكامل للتجارة الإلكترونية مع تكامل الدفع ومصادقة المستخدم ولوحة تحكم الإدارة.",
+                project2_title: "مدير المهام الذكي",
+                project2_desc: "نظام إدارة مهام ذكي يستخدم التعلم الآلي لتحديد أولويات المهام وتنظيمها بكفاءة.",
+                project3_title: "تطبيق تتبع اللياقة",
+                project3_desc: "تطبيق محمول لتتبع التمارين والتغذية والمقاييس الصحية مع تصور البيانات.",
+                project_live: "معاينة مباشرة",
+                project_code: "الكود",
+                book_heading: "كتابي",
+                book_title: "يسمح لك أن تبدأ من جديد",
+                book_desc: " يقدم هذا العمل دليلًا تأمليًا هادئًا في مجال التطوير الذاتي والنمو الشخصي المستدام، حيث يدعو القارئ للتخلي عن وتيرة الحياة المتسارعة وضغوط النجاح اللحظي والمقارنات. من خلال مجموعة من المقالات التأملية القائمة على مواقف واقعية وملاحظات عميقة، يركز المحتوى على أهمية إبطاء الرتم، والتصالح مع الذات، وبناء عادات صغيرة ذات أثر ممتد. كما يناقش بكفاءة كيفية تخطي الأوهام الرقمية، ووضع حدود صحية، وتقبل فكرة البدايات الجديدة برفق ودون شروط مسبقة. يعد هذا الدليل رفيقًا فكريًا وعمليًا لكل من يبحث عن استعادة التوازن النفسي والنمو الذاتي بوعي وسلام داخلي.",
+                book_btn_read: "اقرأ المزيد",
+                contact_heading: "تواصل معي",
+                contact_intro: "هل لديك سؤال، فكرة مشروع، أو تريد فقط إلقاء التحية؟ أرسل لي رسالة أدناه!",
+                contact_email_label: "البريد الإلكتروني",
+                contact_github_label: "جيت هاب",
+                contact_form_name: "اسمك",
+                contact_form_email: "بريدك الإلكتروني",
+                contact_form_message: "الرسالة",
+                contact_form_send: "إرسال الرسالة",
+                footer_text: "© 2026 آدم أفروخ.",
+                footer_note: "* ملاحظة: المسيرة المهنية المعروضة هي نموذج تخيلي تم إعداده للاستخدام المستقبلي بعد التخرج. أما بقية محتويات الموقع -بما في ذلك الأكواد البرمجية، المشاريع، المهارات التقنية، وتفاصيل الكتاب- فهي حقيقية تماماً."
+            }
+        };
+
+        // Current language
+        let currentLang = 'en';
+
+        // Theme initialization based on system preference
+        const systemThemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
+        let currentTheme = systemThemeMedia.matches ? 'dark' : 'light';
+
+        // DOM Elements
+        const langToggle = document.getElementById('lang-toggle');
+        const langText = document.getElementById('lang-text');
+        const html = document.documentElement;
+        const body = document.body;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        // Function to apply theme
+        function applyTheme(theme) {
+            body.className = body.className.replace(/\b(light|dark)\b/g, theme);
+            themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        // Apply initial theme
+        applyTheme(currentTheme);
+
+        // System preference listener
+        systemThemeMedia.addEventListener('change', (e) => {
+            currentTheme = e.matches ? 'dark' : 'light';
+            applyTheme(currentTheme);
+        });
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            langText.textContent = currentLang === 'en' ? 'AR' : 'EN';
+
+            // Update language and direction
+            html.lang = currentLang;
+            html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            body.className = body.className.replace(/\b(en|ar)\b/g, currentLang);
+
+            // Update content
+            updateContent();
+        });
+
+        // Update content based on language
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (content[currentLang][key]) {
+                    element.textContent = content[currentLang][key];
+                }
+            });
+        }
+
+        // Theme toggle button click
+        themeToggle.addEventListener('click', () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            applyTheme(currentTheme);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Animate progress bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-bar');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.getElementById('skills');
+        observer.observe(skillsSection);
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert(currentLang === 'en' ? 'Thank you for your message! I will get back to you soon.' : 'شكراً لرسالتك! سأرد عليك قريباً.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+
+</html>
