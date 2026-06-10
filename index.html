@@ -468,7 +468,7 @@
                             <h4 class="text-xl font-semibold text-primary">Java</h4>
                         </div>
                         <div class="w-full bg-tertiary rounded-full h-2">
-                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 80%"></div>
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 20%"></div>
                         </div>
                     </div>
 
@@ -488,7 +488,7 @@
                             <h4 class="text-xl font-semibold text-primary">SQL</h4>
                         </div>
                         <div class="w-full bg-tertiary rounded-full h-2">
-                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 85%"></div>
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 5%"></div>
                         </div>
                     </div>
 
@@ -498,7 +498,7 @@
                             <h4 class="text-xl font-semibold text-primary">PHP</h4>
                         </div>
                         <div class="w-full bg-tertiary rounded-full h-2">
-                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 75%"></div>
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 15%"></div>
                         </div>
                     </div>
                 </div>
@@ -553,27 +553,29 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="project-card bg-primary rounded-lg overflow-hidden shadow-lg">
-                    <div class="h-48 bg-accent flex items-center justify-center">
-                        <i class="fas fa-shopping-cart text-6xl text-white"></i>
+                    <div class="h-48 overflow-hidden">
+                        <img src="logo.png" alt="Donut Rush" class="w-full h-full object-cover">
                     </div>
+
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-3 text-primary" data-key="project1_title">
-                            E-Commerce Platform
+                            3D Endless Runner
                         </h3>
                         <p class="text-secondary mb-4" data-key="project1_desc">
-                            A full-stack e-commerce solution with payment integration, user authentication, and admin
-                            dashboard.
+                            A fast-paced 3D endless runner where you control a rolling donut character, navigating vibrant pastel tracks and dodging dynamic obstacles.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">React</span>
-                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Node.js</span>
-                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">MongoDB</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Three.js</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">HTML5</span>
                         </div>
+                        <p data-key="project_partnership" class="text-xs text-gray-300 mb-2 mt-1">In partnership with Zakaria Azergui</p>
                         <div class="flex gap-4">
-                            <a href="#" class="text-accent hover:underline">
+                            <a href="https://adamafroukh.github.io/donut-rush/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
                                 <i class="fas fa-external-link-alt"></i> <span data-key="project_live">Live Demo</span>
                             </a>
-                            <a href="#" class="text-accent hover:underline">
+                            <a href="https://github.com/adamafroukh/donut-rush" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
                                 <i class="fab fa-github"></i> <span data-key="project_code">Code</span>
                             </a>
                         </div>
@@ -727,6 +729,9 @@
                 <!-- Contact Form -->
                 <div>
                     <form class="space-y-4" onsubmit="event.preventDefault();">
+                        <p class="text-xs text-gray-300 max-w-2xl mx-auto leading-relaxed" data-key="footer_note1">
+                            * Note: This contact form is currently in beta/testing mode. To get in touch, please use the email address directly.
+                        </p>
                         <div>
                             <label class="block text-sm font-semibold mb-2 text-primary"
                                 data-key="contact_form_name">Your Name</label>
@@ -764,8 +769,10 @@
                 authentic.
             </p>
             <div class="flex justify-center gap-6 mt-4">
-                <a href="https://github.com/adamafroukh" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-accent text-2xl"><i class="fab fa-github"></i></a>
-                <a href="mailto:adamafroukh@outlook.com" class="text-secondary hover:text-accent text-2xl"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/adamafroukh" target="_blank" rel="noopener noreferrer"
+                    class="text-secondary hover:text-accent text-2xl"><i class="fab fa-github"></i></a>
+                <a href="mailto:adamafroukh@outlook.com" class="text-secondary hover:text-accent text-2xl"><i
+                        class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
@@ -809,8 +816,9 @@
                 skills_languages_heading: "Programming Languages",
                 skills_frameworks_heading: "Frameworks & Tools",
                 projects_heading: "Featured Projects",
-                project1_title: "E-Commerce Platform",
-                project1_desc: "A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.",
+                project1_title: "3D Endless Runner",
+                project1_desc: "A fast-paced 3D endless runner where you control a rolling donut character, navigating vibrant pastel tracks and dodging dynamic obstacles.",
+                project_partnership: "In partnership with Zakaria Azergui",
                 project2_title: "AI Task Manager",
                 project2_desc: "An intelligent task management system using machine learning to prioritize and organize tasks efficiently.",
                 project3_title: "Fitness Tracker App",
@@ -830,7 +838,8 @@
                 contact_form_message: "Message",
                 contact_form_send: "Send Message",
                 footer_text: "© 2026 by Adam Afroukh.",
-                footer_note: "* Note: The professional career timeline is a conceptual placeholder designed for future graduation use. All other elements, including the codebase, projects, technical skills, and book details, are entirely authentic."
+                footer_note: "* Note: The professional career timeline is a conceptual placeholder designed for future graduation use. All other elements, including the codebase, projects, technical skills, and book details, are entirely authentic.",
+                footer_note1: "* Note: This contact form is currently in beta/testing mode. To get in touch, please use the email address directly."
             },
             ar: {
                 nav_home: "الرئيسية",
@@ -868,8 +877,9 @@
                 skills_languages_heading: "لغات البرمجة",
                 skills_frameworks_heading: "الأطر والأدوات",
                 projects_heading: "مشاريعي المميزة",
-                project1_title: "منصة التجارة الإلكترونية",
-                project1_desc: "حل متكامل للتجارة الإلكترونية مع تكامل الدفع ومصادقة المستخدم ولوحة تحكم الإدارة.",
+                project1_title:" لعبة ركض ثلاثية الأبعاد",
+                project1_desc: "لعبة ركض لانهائي ثلاثية الأبعاد سريعة الإيقاع، تتحكم فيها بدونات متدحرجة، وتناور عبر مسارات باستيل حيوية لتفادي العقبات الديناميكية.",
+                project_partnership: "بالشراكة مع زكرياء ازرݣي",
                 project2_title: "مدير المهام الذكي",
                 project2_desc: "نظام إدارة مهام ذكي يستخدم التعلم الآلي لتحديد أولويات المهام وتنظيمها بكفاءة.",
                 project3_title: "تطبيق تتبع اللياقة",
@@ -889,7 +899,8 @@
                 contact_form_message: "الرسالة",
                 contact_form_send: "إرسال الرسالة",
                 footer_text: "© 2026 آدم أفروخ.",
-                footer_note: "* ملاحظة: المسيرة المهنية المعروضة هي نموذج تخيلي تم إعداده للاستخدام المستقبلي بعد التخرج. أما بقية محتويات الموقع -بما في ذلك الأكواد البرمجية، المشاريع، المهارات التقنية، وتفاصيل الكتاب- فهي حقيقية تماماً."
+                footer_note: "* ملاحظة: المسيرة المهنية المعروضة هي نموذج تخيلي تم إعداده للاستخدام المستقبلي بعد التخرج. أما بقية محتويات الموقع -بما في ذلك الأكواد البرمجية، المشاريع، المهارات التقنية، وتفاصيل الكتاب- فهي حقيقية تماماً.",
+                footer_note1: "* ملاحظة: نموذج الاتصال هذا حالياً في الطور التجريبي. للتواصل، يرجى استخدام عنوان البريد الإلكتروني مباشرة."
             }
         };
 
@@ -1013,7 +1024,7 @@
         const contactForm = document.querySelector('form');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert(currentLang === 'en' ? 'Thank you for your message! I will get back to you soon.' : 'شكراً لرسالتك! سأرد عليك قريباً.');
+            alert(currentLang === 'en' ? 'This form is currently disabled. Please use the email to contact me directly.' : 'هذا النموذج معطل حالياً. يرجى استخدام البريد الإلكتروني للتواصل معي مباشرة.');
             contactForm.reset();
         });
     </script>
