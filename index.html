@@ -389,15 +389,6 @@
                     Programming Languages
                 </h3>
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div class="skill-card bg-secondary p-6 rounded-lg">
-                        <div class="flex items-center gap-4 mb-4">
-                            <i class="fab fa-js text-4xl text-yellow-500"></i>
-                            <h4 class="text-xl font-semibold text-primary">JavaScript</h4>
-                        </div>
-                        <div class="w-full bg-tertiary rounded-full h-2">
-                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 90%"></div>
-                        </div>
-                    </div>
 
                     <div class="skill-card bg-secondary p-6 rounded-lg">
                         <div class="flex items-center gap-4 mb-4">
@@ -411,11 +402,11 @@
 
                     <div class="skill-card bg-secondary p-6 rounded-lg">
                         <div class="flex items-center gap-4 mb-4">
-                            <i class="fab fa-java text-4xl text-red-500"></i>
-                            <h4 class="text-xl font-semibold text-primary">Java</h4>
+                            <i class="fab fa-js text-4xl text-yellow-500"></i>
+                            <h4 class="text-xl font-semibold text-primary">JavaScript</h4>
                         </div>
                         <div class="w-full bg-tertiary rounded-full h-2">
-                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 20%"></div>
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 90%"></div>
                         </div>
                     </div>
 
@@ -431,11 +422,21 @@
 
                     <div class="skill-card bg-secondary p-6 rounded-lg">
                         <div class="flex items-center gap-4 mb-4">
+                            <i class="fab fa-java text-4xl text-red-500"></i>
+                            <h4 class="text-xl font-semibold text-primary">Java</h4>
+                        </div>
+                        <div class="w-full bg-tertiary rounded-full h-2">
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card bg-secondary p-6 rounded-lg">
+                        <div class="flex items-center gap-4 mb-4">
                             <i class="fas fa-database text-4xl accent"></i>
                             <h4 class="text-xl font-semibold text-primary">SQL</h4>
                         </div>
                         <div class="w-full bg-tertiary rounded-full h-2">
-                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 5%"></div>
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 0%"></div>
                         </div>
                     </div>
 
@@ -445,7 +446,7 @@
                             <h4 class="text-xl font-semibold text-primary">PHP</h4>
                         </div>
                         <div class="w-full bg-tertiary rounded-full h-2">
-                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 15%"></div>
+                            <div class="progress-bar bg-accent h-2 rounded-full" style="width: 0%"></div>
                         </div>
                     </div>
                 </div>
@@ -564,27 +565,29 @@
 
                 <!-- Project 3 -->
                 <div class="project-card bg-primary rounded-lg overflow-hidden shadow-lg">
-                    <div class="h-48 bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center">
-                        <i class="fas fa-mobile-alt text-6xl text-white"></i>
+                    <div class="h-48 overflow-hidden">
+                        <img src="keystroke.png" alt="Donut Rush" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-3 text-primary" data-key="project3_title">
-                            Fitness Tracker App
+                            2D Arcade Typing Duel
                         </h3>
                         <p class="text-secondary mb-4" data-key="project3_desc">
-                            A mobile application for tracking workouts, nutrition, and health metrics with data
-                            visualization.
+                            A fast-paced minimalist typing game where you battle an automated adversary, featuring dynamic health bars, live accuracy tracking, and fluid visual effects.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">React Native</span>
-                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Firebase</span>
-                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Redux</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">HTML5</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">CSS3</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">DOM</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">Google Fonts API</span>
+                            <span class="px-3 py-1 bg-tertiary text-primary rounded-full text-sm">OOP</span>
                         </div>
                         <div class="flex gap-4">
-                            <a href="#" class="text-accent hover:underline">
+                            <a href="https://adamafroukh.github.io/keystroke/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
                                 <i class="fas fa-external-link-alt"></i> <span data-key="project_live">Live Demo</span>
                             </a>
-                            <a href="#" class="text-accent hover:underline">
+                            <a href="https://github.com/adamafroukh/keystroke" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
                                 <i class="fab fa-github"></i> <span data-key="project_code">Code</span>
                             </a>
                         </div>
@@ -765,8 +768,8 @@
                 project_partnership: "In partnership with Zakaria Azergui",
                 project2_title: "3D stacking game",
                 project2_desc: "A minimalist 3D architectural stacking game, Features a clean industrial blueprint aesthetic, smooth physics, advanced score tracking, and cross-platform responsive controls.",
-                project3_title: "Fitness Tracker App",
-                project3_desc: "A mobile application for tracking workouts, nutrition, and health metrics with data visualization.",
+                project3_title: "2D Arcade Typing Duel",
+                project3_desc: "A fast-paced minimalist typing game where you battle an automated adversary, featuring dynamic health bars, live accuracy tracking, and fluid visual effects.",
                 project_live: "Live Demo",
                 project_code: "Code",
                 book_heading: "My Book",
@@ -818,8 +821,8 @@
                 project_partnership: "بالشراكة مع زكرياء ازرݣي",
                 project2_title: "لعبة تكديس ثلاثية الأبعاد",
                 project2_desc: "لعبة بناء معمارية ثلاثية الأبعاد بسيطة، تتميز بتصميم أنيق مستوحى من المخططات الصناعية، وفيزياء سلسة، ونظام متطور لتتبع النقاط، وأدوات تحكم متجاوبة عبر مختلف المنصات.",
-                project3_title: "تطبيق تتبع اللياقة",
-                project3_desc: "تطبيق محمول لتتبع التمارين والتغذية والمقاييس الصحية مع تصور البيانات.",
+                project3_title: "لعبة مبارزة بالطباعة",
+                project3_desc: "لعبة كتابة سريعة الإيقاع وبسيطة حيث تحارب خصمًا آليًا، وتتميز بأشرطة صحة ديناميكية، وتتبع دقيق مباشر، ومؤثرات بصرية سلسة.",
                 project_live: "معاينة مباشرة",
                 project_code: "الكود",
                 book_heading: "كتابي",
